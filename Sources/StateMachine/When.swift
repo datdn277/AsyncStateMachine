@@ -11,7 +11,7 @@ where S: DSLCompatible, E: DSLCompatible, O: DSLCompatible {
   let output: @Sendable (S) -> O?
   let transitions: @Sendable (S) -> [On<S, E>]
 
-  init(
+  public init(
     predicate: @Sendable @escaping (S) -> Bool,
     output: @Sendable @escaping (S) -> O?,
     transitions: @Sendable @escaping (S) -> [On<S, E>]
