@@ -9,7 +9,7 @@ public typealias RawViewStateMachine<S, E, O> = ViewStateMachine<S, S, E, O>
 where S: Equatable & DSLCompatible, E: DSLCompatible, O: DSLCompatible
 
 public final class ViewStateMachine<VS, S, E, O>: ObservableObject, @unchecked Sendable
-where VS: Equatable & Sendable, S: DSLCompatible, E: DSLCompatible, O: DSLCompatible {
+where VS: Equatable & Sendable, S: Equatable & DSLCompatible, E: DSLCompatible, O: DSLCompatible {
   struct SendSuspension {
     let predicate: (S) -> Bool
     let continuation: UnsafeContinuation<Void, Never>
